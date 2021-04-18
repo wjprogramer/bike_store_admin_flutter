@@ -63,7 +63,7 @@ class BannerConfig {
   final Color bannerColor;
 
   BannerConfig({
-    @required String this.bannerName,
-    @required Color this.bannerColor});
+    @required this.bannerName,
+    @required this.bannerColor});
 
 }

@@ -1,4 +1,3 @@
-import 'package:bike_store_admin_flutter/app/global_variables.dart';
 import 'package:bike_store_admin_flutter/navigation/route_config.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/home/home_screen.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/product_details/product_details_screen.dart';
@@ -110,7 +109,7 @@ class MyRouterDelegate extends RouterDelegate<RouteConfig>
   //   notifyListeners();
   // }
 
-  void _notifyListeners(void nothing) {
-    notifyListeners();
-  }
+  // void _notifyListeners(void nothing) {
+  //   notifyListeners();
+  // }
 }

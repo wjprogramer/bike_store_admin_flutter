@@ -1,4 +1,3 @@
-import 'package:bike_store_admin_flutter/presentations/layout/base_layout/base_layout.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

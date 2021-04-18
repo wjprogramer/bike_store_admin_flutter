@@ -9,12 +9,6 @@ import "package:universal_html/html.dart" as html;
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 class BaseLayout extends StatefulWidget {
-  final String initialRoute;
-
-  BaseLayout({
-    this.initialRoute = '/',
-  });
-
   @override
   _BaseLayoutState createState() => _BaseLayoutState();
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'drawer_item.dart';
 import 'navigation_drawer_header.dart';
 
 class NavigationDrawer extends StatelessWidget {
