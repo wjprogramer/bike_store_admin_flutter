@@ -1,5 +1,4 @@
-import 'package:bike_store_admin_flutter/core/utils/mixins/routing.dart';
-import 'package:bike_store_admin_flutter/navigation/router_delegate.dart';
+import 'package:bike_store_admin_flutter/navigation/my_router_delegate.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -7,11 +6,9 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with Routing {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    setupRoute(context);
-
     return Container(
       color: Colors.green[100],
       alignment: Alignment.center,
@@ -20,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> with Routing {
           (Router.of(context).routerDelegate as MyRouterDelegate)
               .goProductList();
         },
-        child: Text('Home')
+        child: Text('Product List')
       ),
     );
   }

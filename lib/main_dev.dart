@@ -9,9 +9,9 @@ void main() {
   setPathUrlStrategy();
 
   runApp(
-    MultiProvider(
-      providers: getProviders(),
-      child: App(),
-    )
+    // MultiProvider(
+    //   providers: getProviders(),
+      App(),
+    // )
   );
 }
