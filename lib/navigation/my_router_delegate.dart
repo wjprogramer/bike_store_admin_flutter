@@ -1,9 +1,5 @@
 import 'package:bike_store_admin_flutter/core/utilities/route_utility.dart';
 import 'package:bike_store_admin_flutter/navigation/my_route_config.dart';
-import 'package:bike_store_admin_flutter/presentations/screens/home/home_screen.dart';
-import 'package:bike_store_admin_flutter/presentations/screens/product_details/product_details_screen.dart';
-import 'package:bike_store_admin_flutter/presentations/screens/product_list/product_list_screen.dart';
-import 'package:bike_store_admin_flutter/presentations/screens/unknown/unknown_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
