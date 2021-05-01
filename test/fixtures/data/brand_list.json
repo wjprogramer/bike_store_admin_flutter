@@ -1,0 +1,59 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 1,
+        "name": "Electra",
+        "is_deleted": false
+      },
+      {
+        "id": 2,
+        "name": "Haro",
+        "is_deleted": false
+      },
+      {
+        "id": 3,
+        "name": "Heller",
+        "is_deleted": false
+      },
+      {
+        "id": 4,
+        "name": "Pure Cycles",
+        "is_deleted": false
+      },
+      {
+        "id": 5,
+        "name": "Ritchey",
+        "is_deleted": false
+      },
+      {
+        "id": 6,
+        "name": "Strider",
+        "is_deleted": false
+      },
+      {
+        "id": 7,
+        "name": "Sun Bicycles",
+        "is_deleted": false
+      },
+      {
+        "id": 8,
+        "name": "Surly",
+        "is_deleted": false
+      },
+      {
+        "id": 9,
+        "name": "Trek",
+        "is_deleted": false
+      }
+    ],
+    "page_info": {
+      "size": 10,
+      "page": 0,
+      "data_count": 9,
+      "total_pages": 1,
+      "total_data_count": 9
+    }
+  },
+  "code": 2000
+}

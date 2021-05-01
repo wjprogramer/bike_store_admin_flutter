@@ -25,7 +25,7 @@ void main() {
       expect(config == MyRouteConfig.brandList(), true);
     });
 
-    test('', () async {
+    test('Product Details', () async {
       final productId = '1';
       final routeInformation = RouteInformation(location: '/product/$productId');
       final config = await parser.parseRouteInformation(routeInformation);

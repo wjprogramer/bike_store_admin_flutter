@@ -28,6 +28,7 @@ dependencies:
   # Android, IOS, Linux, macOS, WEB, Windows
   hive: ^2.0.3
   google_fonts: ^2.0.0
+  mockito: ^5.0.7
 
 dev_dependencies:
   flutter_test:
