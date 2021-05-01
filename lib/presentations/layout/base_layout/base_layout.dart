@@ -6,6 +6,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import "package:universal_html/html.dart" as html;
 import 'package:flutter/foundation.dart' show kIsWeb;
 
+import 'base_nav_bar.dart';
 import 'base_side_bar.dart';
 
 class BaseLayout extends StatefulWidget {
@@ -60,10 +61,19 @@ class _BaseLayoutState extends State<BaseLayout> {
               myRouterDelegate: _routerDelegate,
             ),
             Expanded(
-              child: Router(
-                routerDelegate: _routerDelegate,
-                routeInformationParser: _routeInformationParser,
-                routeInformationProvider: _routeInformationProvider,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  BaseNavBar(),
+                  Expanded(
+                    child: Router(
+                      routerDelegate: _routerDelegate,
+                      routeInformationParser: _routeInformationParser,
+                      routeInformationProvider: _routeInformationProvider,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
