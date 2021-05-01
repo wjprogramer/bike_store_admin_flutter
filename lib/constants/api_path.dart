@@ -1,0 +1,1 @@
+const kApiServiceUrl = 'localhost:8082';

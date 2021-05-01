@@ -1,3 +1,4 @@
+import 'package:bike_store_admin_flutter/core/utilities/route_utility.dart';
 import 'package:bike_store_admin_flutter/navigation/my_route_config.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/home/home_screen.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/product_details/product_details_screen.dart';
@@ -37,45 +38,10 @@ class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
 
     return Navigator(
       key: navigatorKey,
-      pages: _buildPages(),
+      pages: RouteUtility.getPages(_currentConfiguration),
       onPopPage: onPopPage,
       // transitionDelegate: transitionDelegate,
     );
-  }
-
-  List<Page<dynamic>> _buildPages() {
-    final List<Page<dynamic>> pages = [
-      MaterialPage(
-        key: ValueKey('HomeScreen'),
-        name: 'Home',
-        child: HomeScreen(),
-      ),
-    ];
-
-    if (_currentConfiguration.isProductDetail)
-      pages.add(MaterialPage(
-        key: ValueKey('ProductDetailScreen'),
-        name: 'ProductDetail',
-        child: ProductDetailScreen(),
-      ));
-
-    if (_currentConfiguration.isProductList)
-      pages.add(MaterialPage(
-        key: ValueKey('ProductListScreen'),
-        name: 'ProductList',
-        child: ProductListScreen(),
-      ));
-
-    if (_currentConfiguration.isUnknown)
-      pages.add(
-          MaterialPage(
-            key: ValueKey('UnknownScreen'),
-            name: 'Unknown',
-            child: UnknownScreen(),
-          )
-      );
-
-    return pages;
   }
 
   @override
@@ -84,9 +50,23 @@ class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
     return;
   }
 
-  void goProductList() {
-    _currentConfiguration = MyRouteConfig.productList();
+  void _setCurrentConfiguration(MyRouteConfig myRouteConfig) {
+    _currentConfiguration = myRouteConfig;
     notifyListeners();
   }
+
+  void goBrandList() => _setCurrentConfiguration(MyRouteConfig.brandList());
+  void goCategoryList() => _setCurrentConfiguration(MyRouteConfig.categoryList());
+  void goProductList() => _setCurrentConfiguration(MyRouteConfig.productList());
+  void goProductDetails(String productId) => _setCurrentConfiguration(MyRouteConfig.productDetails(productId));
+  void goStockList() => _setCurrentConfiguration(MyRouteConfig.stockList());
+  void goStockOfProduct(String productId) => _setCurrentConfiguration(MyRouteConfig.stockDetailsOfProduct(productId));
+  void goCustomerList() => _setCurrentConfiguration(MyRouteConfig.customerList());
+  void goCustomerDetails(String customerId) => _setCurrentConfiguration(MyRouteConfig.customerDetails(customerId));
+  void goOrderList() => _setCurrentConfiguration(MyRouteConfig.orderList());
+  void goOrderDetails(String orderId) => _setCurrentConfiguration(MyRouteConfig.orderDetails(orderId));
+  void goStaffList() => _setCurrentConfiguration(MyRouteConfig.staffList());
+  void goStoreList() => _setCurrentConfiguration(MyRouteConfig.storeList());
+  void goStoreDetails(String storeId) => _setCurrentConfiguration(MyRouteConfig.storeDetails(storeId));
 
 }
