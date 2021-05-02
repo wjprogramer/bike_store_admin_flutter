@@ -10,7 +10,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green[100],
       alignment: Alignment.center,
       child: TextButton(
         onPressed: () {

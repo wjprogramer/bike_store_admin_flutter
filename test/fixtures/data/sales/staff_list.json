@@ -1,0 +1,113 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 1,
+        "first_name": "Fabiola",
+        "last_name": "Jackson",
+        "email": "fabiola.jackson@bikes.shop",
+        "phone": "(831) 555-5554",
+        "active": 1,
+        "store_id": 1,
+        "store": {
+          "id": 1,
+          "store_name": "Santa Cruz Bikes",
+          "phone": "(831) 476-4321",
+          "email": "santacruz@bikes.shop",
+          "street": "3700 Portola Drive",
+          "city": "Santa Cruz",
+          "state": "CA",
+          "zip_code": "95060"
+        }
+      },
+      {
+        "id": 2,
+        "first_name": "Mireya",
+        "last_name": "Copeland",
+        "email": "mireya.copeland@bikes.shop",
+        "phone": "(831) 555-5555",
+        "active": 1,
+        "store_id": 1,
+        "manager_id": 1,
+        "store": {
+          "id": 1,
+          "store_name": "Santa Cruz Bikes",
+          "phone": "(831) 476-4321",
+          "email": "santacruz@bikes.shop",
+          "street": "3700 Portola Drive",
+          "city": "Santa Cruz",
+          "state": "CA",
+          "zip_code": "95060"
+        }
+      },
+      {
+        "id": 3,
+        "first_name": "Genna",
+        "last_name": "Serrano",
+        "email": "genna.serrano@bikes.shop",
+        "phone": "(831) 555-5556",
+        "active": 1,
+        "store_id": 1,
+        "manager_id": 2,
+        "store": {
+          "id": 1,
+          "store_name": "Santa Cruz Bikes",
+          "phone": "(831) 476-4321",
+          "email": "santacruz@bikes.shop",
+          "street": "3700 Portola Drive",
+          "city": "Santa Cruz",
+          "state": "CA",
+          "zip_code": "95060"
+        }
+      },
+      {
+        "id": 4,
+        "first_name": "Virgie",
+        "last_name": "Wiggins",
+        "email": "virgie.wiggins@bikes.shop",
+        "phone": "(831) 555-5557",
+        "active": 1,
+        "store_id": 1,
+        "manager_id": 2,
+        "store": {
+          "id": 1,
+          "store_name": "Santa Cruz Bikes",
+          "phone": "(831) 476-4321",
+          "email": "santacruz@bikes.shop",
+          "street": "3700 Portola Drive",
+          "city": "Santa Cruz",
+          "state": "CA",
+          "zip_code": "95060"
+        }
+      },
+      {
+        "id": 5,
+        "first_name": "Jannette",
+        "last_name": "David",
+        "email": "jannette.david@bikes.shop",
+        "phone": "(516) 379-4444",
+        "active": 1,
+        "store_id": 2,
+        "manager_id": 1,
+        "store": {
+          "id": 2,
+          "store_name": "Baldwin Bikes",
+          "phone": "(516) 379-8888",
+          "email": "baldwin@bikes.shop",
+          "street": "4200 Chestnut Lane",
+          "city": "Baldwin",
+          "state": "NY",
+          "zip_code": "11432"
+        }
+      }
+    ],
+    "page_info": {
+      "size": 5,
+      "page": 0,
+      "data_count": 5,
+      "total_pages": 2,
+      "total_data_count": 10
+    }
+  },
+  "code": 2000
+}

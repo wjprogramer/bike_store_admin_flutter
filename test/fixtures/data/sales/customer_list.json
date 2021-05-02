@@ -1,0 +1,65 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 1,
+        "first_name": "Debra",
+        "last_name": "Burks",
+        "email": "debra.burks@yahoo.com",
+        "street": "9273 Thorne Ave. ",
+        "city": "Orchard Park",
+        "state": "NY",
+        "zip_code": "14127"
+      },
+      {
+        "id": 2,
+        "first_name": "Kasha",
+        "last_name": "Todd",
+        "email": "kasha.todd@yahoo.com",
+        "street": "910 Vine Street ",
+        "city": "Campbell",
+        "state": "CA",
+        "zip_code": "95008"
+      },
+      {
+        "id": 3,
+        "first_name": "Tameka",
+        "last_name": "Fisher",
+        "email": "tameka.fisher@aol.com",
+        "street": "769C Honey Creek St. ",
+        "city": "Redondo Beach",
+        "state": "CA",
+        "zip_code": "90278"
+      },
+      {
+        "id": 4,
+        "first_name": "Daryl",
+        "last_name": "Spence",
+        "email": "daryl.spence@aol.com",
+        "street": "988 Pearl Lane ",
+        "city": "Uniondale",
+        "state": "NY",
+        "zip_code": "11553"
+      },
+      {
+        "id": 5,
+        "first_name": "Charolette",
+        "last_name": "Rice",
+        "email": "charolette.rice@msn.com",
+        "phone": "(916) 381-6003",
+        "street": "107 River Dr. ",
+        "city": "Sacramento",
+        "state": "CA",
+        "zip_code": "95820"
+      }
+    ],
+    "page_info": {
+      "size": 5,
+      "page": 0,
+      "data_count": 5,
+      "total_pages": 289,
+      "total_data_count": 1445
+    }
+  },
+  "code": 2000
+}

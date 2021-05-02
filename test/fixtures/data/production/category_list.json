@@ -1,0 +1,49 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 1,
+        "name": "Children Bicycles",
+        "is_deleted": false
+      },
+      {
+        "id": 2,
+        "name": "Comfort Bicycles",
+        "is_deleted": false
+      },
+      {
+        "id": 3,
+        "name": "Cruisers Bicycles",
+        "is_deleted": false
+      },
+      {
+        "id": 4,
+        "name": "Cyclocross Bicycles",
+        "is_deleted": false
+      },
+      {
+        "id": 5,
+        "name": "Electric Bikes",
+        "is_deleted": false
+      },
+      {
+        "id": 6,
+        "name": "Mountain Bikes",
+        "is_deleted": false
+      },
+      {
+        "id": 7,
+        "name": "Road Bikes",
+        "is_deleted": false
+      }
+    ],
+    "page_info": {
+      "size": 50,
+      "page": 0,
+      "data_count": 7,
+      "total_pages": 1,
+      "total_data_count": 7
+    }
+  },
+  "code": 2000
+}

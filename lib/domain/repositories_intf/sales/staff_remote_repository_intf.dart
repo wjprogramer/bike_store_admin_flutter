@@ -1,0 +1,21 @@
+import 'package:bike_store_admin_flutter/data/models/production/brand.dart';
+
+abstract class BrandRemoteRepository {
+
+  Future<void> create({
+    String name,
+    String imageUrl,
+  });
+
+  Future<Brand> getById(String id);
+
+  Future<Brand> findAll({
+    int page = 0,
+    int size = 10,
+  });
+
+  Future<void> update();
+
+  Future<void> delete();
+
+}

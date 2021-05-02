@@ -1,0 +1,134 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 184,
+        "name": "Trek Domane SL 6 Disc - 2018",
+        "model_year": 2018,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 7,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 200,
+        "name": "Trek Powerfly 5 - 2018",
+        "model_year": 2018,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 5,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 49,
+        "name": "Trek Domane SL 6 - 2017",
+        "model_year": 2017,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 7,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 62,
+        "name": "Trek Boone 7 - 2017",
+        "model_year": 2017,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 4,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 63,
+        "name": "Trek Boone Race Shop Limited - 2017",
+        "model_year": 2017,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 4,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 188,
+        "name": "Trek XM700+ Lowstep - 2018",
+        "model_year": 2018,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 5,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 202,
+        "name": "Trek Powerfly 5 Women's - 2018",
+        "model_year": 2018,
+        "list_price": "3499.99",
+        "brand_id": 9,
+        "category_id": 5,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 206,
+        "name": "Trek Boone 5 Disc - 2018",
+        "model_year": 2018,
+        "list_price": "3299.99",
+        "brand_id": 9,
+        "category_id": 4,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 115,
+        "name": "Trek Fuel EX 8 29 - 2018",
+        "model_year": 2018,
+        "list_price": "3199.99",
+        "brand_id": 9,
+        "category_id": 6,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      },
+      {
+        "id": 176,
+        "name": "Trek Madone 9 Frameset - 2018",
+        "model_year": 2018,
+        "list_price": "3199.99",
+        "brand_id": 9,
+        "category_id": 7,
+        "images_urls": [],
+        "visible": true,
+        "enable": true,
+        "is_deleted": false
+      }
+    ],
+    "page_info": {
+      "size": 10,
+      "page": 3,
+      "data_count": 10,
+      "total_pages": 33,
+      "total_data_count": 321
+    }
+  },
+  "code": 2000
+}

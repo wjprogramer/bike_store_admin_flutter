@@ -1,0 +1,40 @@
+{
+  "id": 7,
+  "order_status": "Completed",
+  "order_date": "2016-01-04 00:00:00",
+  "required_date": "2016-01-07 00:00:00",
+  "shipped_date": "2016-01-05 00:00:00",
+  "customer_id": 324,
+  "store_id": 2,
+  "staff_id": 6,
+  "customer": {
+    "id": 324,
+    "first_name": "Laureen",
+    "last_name": "Paul",
+    "email": "laureen.paul@yahoo.com",
+    "street": "617 Squaw Creek Rd. ",
+    "city": "Bellmore",
+    "state": "NY",
+    "zip_code": "11710"
+  },
+  "store": {
+    "id": 2,
+    "store_name": "Baldwin Bikes",
+    "phone": "(516) 379-8888",
+    "email": "baldwin@bikes.shop",
+    "street": "4200 Chestnut Lane",
+    "city": "Baldwin",
+    "state": "NY",
+    "zip_code": "11432"
+  },
+  "staff": {
+    "id": 6,
+    "first_name": "Marcelene",
+    "last_name": "Boyer",
+    "email": "marcelene.boyer@bikes.shop",
+    "phone": "(516) 379-4445",
+    "active": 1,
+    "store_id": 2,
+    "manager_id": 5
+  }
+}

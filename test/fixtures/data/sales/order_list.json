@@ -1,0 +1,214 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 2,
+        "order_status": "Completed",
+        "order_date": "2016-01-01 00:00:00",
+        "required_date": "2016-01-04 00:00:00",
+        "shipped_date": "2016-01-03 00:00:00",
+        "customer_id": 1212,
+        "store_id": 2,
+        "staff_id": 6,
+        "customer": {
+          "id": 1212,
+          "first_name": "Jaqueline",
+          "last_name": "Cummings",
+          "email": "jaqueline.cummings@hotmail.com",
+          "street": "478 Wrangler St. ",
+          "city": "Huntington Station",
+          "state": "NY",
+          "zip_code": "11746"
+        },
+        "store": {
+          "id": 2,
+          "store_name": "Baldwin Bikes",
+          "phone": "(516) 379-8888",
+          "email": "baldwin@bikes.shop",
+          "street": "4200 Chestnut Lane",
+          "city": "Baldwin",
+          "state": "NY",
+          "zip_code": "11432"
+        },
+        "staff": {
+          "id": 6,
+          "first_name": "Marcelene",
+          "last_name": "Boyer",
+          "email": "marcelene.boyer@bikes.shop",
+          "phone": "(516) 379-4445",
+          "active": 1,
+          "store_id": 2,
+          "manager_id": 5
+        }
+      },
+      {
+        "id": 3,
+        "order_status": "Completed",
+        "order_date": "2016-01-02 00:00:00",
+        "required_date": "2016-01-05 00:00:00",
+        "shipped_date": "2016-01-03 00:00:00",
+        "customer_id": 523,
+        "store_id": 2,
+        "staff_id": 7,
+        "customer": {
+          "id": 523,
+          "first_name": "Joshua",
+          "last_name": "Robertson",
+          "email": "joshua.robertson@gmail.com",
+          "street": "81 Campfire Court ",
+          "city": "Patchogue",
+          "state": "NY",
+          "zip_code": "11772"
+        },
+        "store": {
+          "id": 2,
+          "store_name": "Baldwin Bikes",
+          "phone": "(516) 379-8888",
+          "email": "baldwin@bikes.shop",
+          "street": "4200 Chestnut Lane",
+          "city": "Baldwin",
+          "state": "NY",
+          "zip_code": "11432"
+        },
+        "staff": {
+          "id": 7,
+          "first_name": "Venita",
+          "last_name": "Daniel",
+          "email": "venita.daniel@bikes.shop",
+          "phone": "(516) 379-4446",
+          "active": 1,
+          "store_id": 2,
+          "manager_id": 5
+        }
+      },
+      {
+        "id": 5,
+        "order_status": "Completed",
+        "order_date": "2016-01-03 00:00:00",
+        "required_date": "2016-01-06 00:00:00",
+        "shipped_date": "2016-01-06 00:00:00",
+        "customer_id": 1324,
+        "store_id": 2,
+        "staff_id": 6,
+        "customer": {
+          "id": 1324,
+          "first_name": "Arla",
+          "last_name": "Ellis",
+          "email": "arla.ellis@yahoo.com",
+          "street": "127 Crescent Ave. ",
+          "city": "Utica",
+          "state": "NY",
+          "zip_code": "13501"
+        },
+        "store": {
+          "id": 2,
+          "store_name": "Baldwin Bikes",
+          "phone": "(516) 379-8888",
+          "email": "baldwin@bikes.shop",
+          "street": "4200 Chestnut Lane",
+          "city": "Baldwin",
+          "state": "NY",
+          "zip_code": "11432"
+        },
+        "staff": {
+          "id": 6,
+          "first_name": "Marcelene",
+          "last_name": "Boyer",
+          "email": "marcelene.boyer@bikes.shop",
+          "phone": "(516) 379-4445",
+          "active": 1,
+          "store_id": 2,
+          "manager_id": 5
+        }
+      },
+      {
+        "id": 6,
+        "order_status": "Completed",
+        "order_date": "2016-01-04 00:00:00",
+        "required_date": "2016-01-07 00:00:00",
+        "shipped_date": "2016-01-05 00:00:00",
+        "customer_id": 94,
+        "store_id": 2,
+        "staff_id": 6,
+        "customer": {
+          "id": 94,
+          "first_name": "Sharyn",
+          "last_name": "Hopkins",
+          "email": "sharyn.hopkins@hotmail.com",
+          "street": "4 South Temple Ave. ",
+          "city": "Baldwinsville",
+          "state": "NY",
+          "zip_code": "13027"
+        },
+        "store": {
+          "id": 2,
+          "store_name": "Baldwin Bikes",
+          "phone": "(516) 379-8888",
+          "email": "baldwin@bikes.shop",
+          "street": "4200 Chestnut Lane",
+          "city": "Baldwin",
+          "state": "NY",
+          "zip_code": "11432"
+        },
+        "staff": {
+          "id": 6,
+          "first_name": "Marcelene",
+          "last_name": "Boyer",
+          "email": "marcelene.boyer@bikes.shop",
+          "phone": "(516) 379-4445",
+          "active": 1,
+          "store_id": 2,
+          "manager_id": 5
+        }
+      },
+      {
+        "id": 7,
+        "order_status": "Completed",
+        "order_date": "2016-01-04 00:00:00",
+        "required_date": "2016-01-07 00:00:00",
+        "shipped_date": "2016-01-05 00:00:00",
+        "customer_id": 324,
+        "store_id": 2,
+        "staff_id": 6,
+        "customer": {
+          "id": 324,
+          "first_name": "Laureen",
+          "last_name": "Paul",
+          "email": "laureen.paul@yahoo.com",
+          "street": "617 Squaw Creek Rd. ",
+          "city": "Bellmore",
+          "state": "NY",
+          "zip_code": "11710"
+        },
+        "store": {
+          "id": 2,
+          "store_name": "Baldwin Bikes",
+          "phone": "(516) 379-8888",
+          "email": "baldwin@bikes.shop",
+          "street": "4200 Chestnut Lane",
+          "city": "Baldwin",
+          "state": "NY",
+          "zip_code": "11432"
+        },
+        "staff": {
+          "id": 6,
+          "first_name": "Marcelene",
+          "last_name": "Boyer",
+          "email": "marcelene.boyer@bikes.shop",
+          "phone": "(516) 379-4445",
+          "active": 1,
+          "store_id": 2,
+          "manager_id": 5
+        }
+      }
+    ],
+    "page_info": {
+      "size": 5,
+      "page": 0,
+      "data_count": 5,
+      "total_pages": 219,
+      "total_data_count": 1093
+    }
+  },
+  "code": 2000
+}

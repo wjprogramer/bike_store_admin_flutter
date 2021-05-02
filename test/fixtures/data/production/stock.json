@@ -1,0 +1,28 @@
+{
+  "id": 3,
+  "quantity": 6,
+  "store_id": 1,
+  "product_id": 3,
+  "product": {
+    "id": 3,
+    "name": "Surly Wednesday Frameset - 2016",
+    "model_year": 2016,
+    "list_price": "999.99",
+    "brand_id": 8,
+    "category_id": 6,
+    "images_urls": [],
+    "visible": true,
+    "enable": true,
+    "is_deleted": false
+  },
+  "store": {
+    "id": 1,
+    "store_name": "Santa Cruz Bikes",
+    "phone": "(831) 476-4321",
+    "email": "santacruz@bikes.shop",
+    "street": "3700 Portola Drive",
+    "city": "Santa Cruz",
+    "state": "CA",
+    "zip_code": "95060"
+  }
+}
