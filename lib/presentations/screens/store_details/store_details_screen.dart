@@ -1,3 +1,4 @@
+import 'package:bike_store_admin_flutter/core/utils/mixins/base_screen_state.dart';
 import 'package:flutter/material.dart';
 
 class StoreDetailsScreen extends StatefulWidget {
@@ -5,7 +6,7 @@ class StoreDetailsScreen extends StatefulWidget {
   _StoreDetailsScreenState createState() => _StoreDetailsScreenState();
 }
 
-class _StoreDetailsScreenState extends State<StoreDetailsScreen> {
+class _StoreDetailsScreenState extends State<StoreDetailsScreen> with BaseScreenState {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

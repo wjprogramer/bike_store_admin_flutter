@@ -1,0 +1,114 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": 1,
+        "order_id": 1,
+        "quantity": 1,
+        "list_price": "599.99",
+        "discount": "0.20",
+        "product_id": 20,
+        "product": {
+          "id": 20,
+          "name": "Electra Townie Original 7D EQ - Women's - 2016",
+          "model_year": 2016,
+          "list_price": "599.99",
+          "brand_id": 1,
+          "category_id": 3,
+          "images_urls": [],
+          "visible": true,
+          "enable": true,
+          "is_deleted": false
+        }
+      },
+      {
+        "id": 1,
+        "order_id": 1,
+        "quantity": 1,
+        "list_price": "599.99",
+        "discount": "0.20",
+        "product_id": 20,
+        "product": {
+          "id": 20,
+          "name": "Electra Townie Original 7D EQ - Women's - 2016",
+          "model_year": 2016,
+          "list_price": "599.99",
+          "brand_id": 1,
+          "category_id": 3,
+          "images_urls": [],
+          "visible": true,
+          "enable": true,
+          "is_deleted": false
+        }
+      },
+      {
+        "id": 1,
+        "order_id": 1,
+        "quantity": 1,
+        "list_price": "599.99",
+        "discount": "0.20",
+        "product_id": 20,
+        "product": {
+          "id": 20,
+          "name": "Electra Townie Original 7D EQ - Women's - 2016",
+          "model_year": 2016,
+          "list_price": "599.99",
+          "brand_id": 1,
+          "category_id": 3,
+          "images_urls": [],
+          "visible": true,
+          "enable": true,
+          "is_deleted": false
+        }
+      },
+      {
+        "id": 1,
+        "order_id": 1,
+        "quantity": 1,
+        "list_price": "599.99",
+        "discount": "0.20",
+        "product_id": 20,
+        "product": {
+          "id": 20,
+          "name": "Electra Townie Original 7D EQ - Women's - 2016",
+          "model_year": 2016,
+          "list_price": "599.99",
+          "brand_id": 1,
+          "category_id": 3,
+          "images_urls": [],
+          "visible": true,
+          "enable": true,
+          "is_deleted": false
+        }
+      },
+      {
+        "id": 1,
+        "order_id": 1,
+        "quantity": 1,
+        "list_price": "599.99",
+        "discount": "0.20",
+        "product_id": 20,
+        "product": {
+          "id": 20,
+          "name": "Electra Townie Original 7D EQ - Women's - 2016",
+          "model_year": 2016,
+          "list_price": "599.99",
+          "brand_id": 1,
+          "category_id": 3,
+          "images_urls": [],
+          "visible": true,
+          "enable": true,
+          "is_deleted": false
+        }
+      }
+    ],
+    "page_info": {
+      "size": 5,
+      "page": 0,
+      "data_count": 5,
+      "total_pages": 945,
+      "total_data_count": 4722
+    }
+  },
+  "code": 2000
+}

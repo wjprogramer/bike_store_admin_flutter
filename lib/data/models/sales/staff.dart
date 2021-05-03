@@ -1,23 +1,45 @@
 import 'package:bike_store_admin_flutter/data/models/base_model.dart';
+import 'package:bike_store_admin_flutter/data/models/sales/store.dart';
 
-class Brand implements BaseModel {
+class Staff implements BaseModel {
 
   String id;
-  String name;
-  bool isDeleted;
+  String firstName;
+  String lastName;
+  String email;
+  String phone;
+  int active;
+  int storeId;
+  int managerId;
+  Store store;
 
-  Brand({
+  Staff({
     this.id,
-    this.name,
-    this.isDeleted,
+    this.firstName,
+    this.lastName,
+    this.email,
+    this.phone,
+    this.active,
+    this.storeId,
+    this.managerId,
+    this.store,
   });
 
   @override
-  factory Brand.fromJson(Map<String, dynamic> json) {
-    return Brand(
-      id: json['id']?.toString(),
-      name: json['name'],
-      isDeleted: json['is_deleted'],
+  factory Staff.fromJson(Map<String, dynamic> json) {
+    final store = json['store'] is Map<String, dynamic>
+        ? Store.fromJson(json['store']) : null;
+
+    return Staff(
+      id: json['id'],
+      firstName: json['first_name'],
+      lastName: json['last_name'],
+      email: json['email'],
+      phone: json['phone'],
+      active: json['active'],
+      storeId: json['store_id'],
+      managerId: json['manager_id'],
+      store: store,
     );
   }
 
@@ -25,8 +47,14 @@ class Brand implements BaseModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'name': name,
-      'is_deleted': isDeleted,
+      'first_name': firstName,
+      'last_name': lastName,
+      'email': email,
+      'phone': phone,
+      'active': active,
+      'store_id': storeId,
+      'manager_id': managerId,
+      'store': store?.toJson(),
     };
   }
 

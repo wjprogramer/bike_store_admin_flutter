@@ -16,6 +16,10 @@ class PageInfo implements BaseModel {
     this.totalDataCount,
   });
 
+  PageInfo.withInitialValue(): this(
+    size: 10, page: 0, dataCount: 0, totalPages: 0, totalDataCount: 0,
+  );
+
   @override
   factory PageInfo.fromJson(Map<String, dynamic> json) {
     return PageInfo(

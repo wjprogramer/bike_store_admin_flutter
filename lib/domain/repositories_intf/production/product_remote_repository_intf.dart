@@ -1,15 +1,16 @@
-import 'package:bike_store_admin_flutter/data/models/production/brand.dart';
+import 'package:bike_store_admin_flutter/data/models/common/paged_data.dart';
+import 'package:bike_store_admin_flutter/data/models/production/product.dart';
 
-abstract class BrandRemoteRepository {
+abstract class ProductRemoteRepository {
 
   Future<void> create({
     String name,
     String imageUrl,
   });
 
-  Future<Brand> getById(String id);
+  Future<Product> getById(String id);
 
-  Future<Brand> findAll({
+  Future<PagedData> find({
     int page = 0,
     int size = 10,
   });

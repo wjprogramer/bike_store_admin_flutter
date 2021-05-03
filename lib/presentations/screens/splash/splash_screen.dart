@@ -1,3 +1,4 @@
+import 'package:bike_store_admin_flutter/core/utils/mixins/base_screen_state.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -5,7 +6,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> with BaseScreenState {
 
   @override
   void initState() {
