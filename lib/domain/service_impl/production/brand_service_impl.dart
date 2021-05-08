@@ -20,8 +20,14 @@ class BrandServiceImpl implements BrandService {
   }
 
   @override
-  Future<PagedData> find({int page = 0, int size = 10}) async {
-    return _brandRemoteRepository.find();
+  Future<PagedData> find({
+    int page = 0,
+    int size = 10,
+    String keyword,
+  }) async {
+    return _brandRemoteRepository.find(
+      page: page, size: size, keyword: keyword,
+    );
   }
 
   @override

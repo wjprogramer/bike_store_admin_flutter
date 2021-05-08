@@ -17,6 +17,8 @@ dependencies:
   url_launcher: ^6.0.3
 
   # MIT
+  # Android, IOS, Linux, macOS, Windows
+  websafe_svg: ^2.0.0
   # Android, IOS, Linux, macOS, WEB, Windows
   provider: ^5.0.0
   equatable: ^2.0.0

@@ -11,9 +11,9 @@ Future<void> main() async {
   setPathUrlStrategy();
 
   runApp(
-    // MultiProvider(
-    //   providers: getProviders(),
-      App(),
-    // )
+    MultiProvider(
+      providers: getProviders(),
+      child: App(),
+    )
   );
 }

@@ -1,4 +1,5 @@
 import 'package:bike_store_admin_flutter/navigation/my_router_delegate.dart';
+import 'package:bike_store_admin_flutter/presentations/components/parent_nav_item.dart';
 import 'package:flutter/material.dart';
 
 class BaseSideBar extends StatefulWidget {
@@ -23,74 +24,116 @@ class _BaseSideBarState extends State<BaseSideBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green[100],
-      height: double.infinity,
-      padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16, right: 16),
-      child: SingleChildScrollView(
+    return Drawer(
+      elevation: 0.0,
+      child: Container(
+        height: double.infinity,
+        padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16, right: 16),
         child: IntrinsicWidth(
           child: Column(
+            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _title('Bike Store'),
-              _subTitle('Production'),
-              _link(
-                text: 'Brands',
-                onPressed: () {
-                  _myRouterDelegate.goBrandList();
-                },
+              DrawerHeader(
+                child: _title('Bike Store'),
               ),
-              _link(
-                text: 'Categories',
-                onPressed: () {
-                  _myRouterDelegate.goCategoryList();
-                },
-              ),
-              _link(
-                text: 'Products',
-                onPressed: () {
-                  _myRouterDelegate.goProductList();
-                },
-              ),
-              _link(
-                text: 'Stocks',
-                onPressed: () {
-                  _myRouterDelegate.goStockList();
-                },
-              ),
-              _separator(),
-              _subTitle('Sales'),
-              _link(
-                text: 'Customers',
-                onPressed: () {
-                  _myRouterDelegate.goCustomerList();
-                },
-              ),
-              _link(
-                text: 'Orders',
-                onPressed: () {
-                  _myRouterDelegate.goOrderList();
-                },
-              ),
-              _link(
-                text: 'Staffs',
-                onPressed: () {
-                  _myRouterDelegate.goStaffList();
-                },
-              ),
-              _link(
-                text: 'Stores',
-                onPressed: () {
-                  _myRouterDelegate.goStoreList();
-                },
-              ),
-              _separator(),
-              _link(
-                text: 'About',
-                onPressed: () {
-                  _myRouterDelegate.goProductList();
-                },
-              ),
+              SizedBox(height: 16),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _subTitle('Production'),
+                      _link(
+                        text: 'Brands',
+                        icon: Icons.local_offer_outlined,
+                        onPressed: () {
+                          _myRouterDelegate.goBrandList();
+                        },
+                      ),
+                      _link(
+                        text: 'Categories',
+                        icon: Icons.reorder_rounded,
+                        onPressed: () {
+                          _myRouterDelegate.goCategoryList();
+                        },
+                      ),
+                      _link(
+                        text: 'Products',
+                        icon: Icons.shopping_cart_outlined,
+                        onPressed: () {
+                          _myRouterDelegate.goProductList();
+                        },
+                      ),
+                      _link(
+                        text: 'Stocks',
+                        icon: Icons.compare_arrows_outlined,
+                        onPressed: () {
+                          _myRouterDelegate.goStockList();
+                        },
+                      ),
+                      _separator(),
+                      _subTitle('Sales'),
+                      _link(
+                        text: 'Customers',
+                        icon: Icons.people_outline,
+                        onPressed: () {
+                          _myRouterDelegate.goCustomerList();
+                        },
+                      ),
+                      _link(
+                        text: 'Orders',
+                        icon: Icons.list_outlined,
+                        onPressed: () {
+                          _myRouterDelegate.goOrderList();
+                        },
+                      ),
+                      _link(
+                        text: 'Staffs',
+                        icon: Icons.admin_panel_settings_outlined,
+                        onPressed: () {
+                          _myRouterDelegate.goStaffList();
+                        },
+                      ),
+                      _link(
+                        text: 'Stores',
+                        icon: Icons.store_outlined,
+                        onPressed: () {
+                          _myRouterDelegate.goStoreList();
+                        },
+                      ),
+                      _separator(),
+                      _subTitle('Developer'),
+                      ParentNavItem(
+                          text: 'Interface',
+                          icon: Icons.build,
+                          children: [
+                            _link(
+                              text: 'Colors',
+                              onPressed: () {
+                                _myRouterDelegate.goStoreList();
+                              },
+                            ),
+                            _link(
+                              text: 'Font',
+                              onPressed: () {
+                                _myRouterDelegate.goStoreList();
+                              },
+                            ),
+                          ]
+                      ),
+                      _separator(),
+                      _link(
+                        text: 'About',
+                        icon: Icons.mail_outline,
+                        onPressed: () {
+                          _myRouterDelegate.goProductList();
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
@@ -99,13 +142,15 @@ class _BaseSideBarState extends State<BaseSideBar> {
   }
 
   Widget _title(String title) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 16, right: 16),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
@@ -126,23 +171,31 @@ class _BaseSideBarState extends State<BaseSideBar> {
 
   Widget _link({
     String text = '',
+    IconData icon,
     Function onPressed,
   }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16, left: 8),
-      child: GestureDetector(
-          onTap: onPressed ?? () {},
-          child: Text(text, style: TextStyle(fontSize: 20),)
-      ),
+    return ListTile(
+      leading: icon != null ? Icon(
+        icon,
+        color: Colors.white54,
+        size: 16,
+      ) : null,
+      horizontalTitleGap: 0.0,
+      onTap: onPressed ?? () {},
+      title: Text(text, style: TextStyle(fontSize: 20),),
     );
   }
 
   Widget _separator() {
     return Container(
       height: 1,
-      margin: const EdgeInsets.only(top: 8, bottom: 24),
+      margin: const EdgeInsets.only(top: 24, bottom: 24),
       width: double.infinity,
-      color: Colors.black.withOpacity(0.5),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: Divider.createBorderSide(context),
+        ),
+      ),
     );
   }
 

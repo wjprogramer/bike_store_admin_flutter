@@ -51,6 +51,7 @@ class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
     notifyListeners();
   }
 
+  // main
   void goBrandList() => _setCurrentConfiguration(MyRouteConfig.brandList());
   void goCategoryList() => _setCurrentConfiguration(MyRouteConfig.categoryList());
   void goProductList() => _setCurrentConfiguration(MyRouteConfig.productList());
@@ -64,5 +65,7 @@ class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
   void goStaffList() => _setCurrentConfiguration(MyRouteConfig.staffList());
   void goStoreList() => _setCurrentConfiguration(MyRouteConfig.storeList());
   void goStoreDetails(String storeId) => _setCurrentConfiguration(MyRouteConfig.storeDetails(storeId));
+
+
 
 }

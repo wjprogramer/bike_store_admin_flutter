@@ -16,10 +16,14 @@ class BrandRemoteRepositoryImpl extends BrandRemoteRepository {
   }
 
   @override
-  Future<PagedData> find({int page = 0, int size = 10}) async {
+  Future<PagedData> find({
+    int page = 0,
+    int size = 10,
+    String keyword,
+  }) async {
     final path = ApiUrlConfig.brands;
     final queryParameters = {
-      'page': page, 'size': size
+      'page': page, 'size': size, 'keyword': keyword ?? '',
     };
 
     final res = await ApiRequestHelper.get(path,

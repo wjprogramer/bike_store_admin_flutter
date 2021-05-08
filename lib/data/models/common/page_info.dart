@@ -16,6 +16,9 @@ class PageInfo implements BaseModel {
     this.totalDataCount,
   });
 
+  bool get isLast => page == totalPages - 1;
+  bool get isFirst => page == 0;
+
   PageInfo.withInitialValue(): this(
     size: 10, page: 0, dataCount: 0, totalPages: 0, totalDataCount: 0,
   );

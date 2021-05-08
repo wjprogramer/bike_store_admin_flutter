@@ -15,6 +15,8 @@ import 'package:bike_store_admin_flutter/presentations/screens/store_details/sto
 import 'package:bike_store_admin_flutter/presentations/screens/store_list/store_list_screen.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/unknown/unknown_screen.dart';
 import 'package:flutter/material.dart';
+import "package:universal_html/html.dart" as html;
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 extension _RouteParsing on List<String> {
   bool checkPathIs(MyRouteConfig config) =>
@@ -24,6 +26,16 @@ extension _RouteParsing on List<String> {
 class RouteUtility {
 
   RouteUtility._();
+
+  static String getInitialRoute() {
+    var initialRoute = "/";
+    if (kIsWeb) {
+      final origin = html.window.location.origin;
+      final href = html.window.location.href;
+      initialRoute = href.substring(origin.length);
+    }
+    return initialRoute;
+  }
 
   static MyRouteConfig getRouteConfig(RouteInformation routeInformation) {
     final uri = Uri.parse(routeInformation.location);

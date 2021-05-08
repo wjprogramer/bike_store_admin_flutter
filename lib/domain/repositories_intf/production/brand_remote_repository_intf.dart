@@ -13,6 +13,7 @@ abstract class BrandRemoteRepository {
   Future<PagedData> find({
     int page = 0,
     int size = 10,
+    String keyword,
   });
 
   Future<void> update();

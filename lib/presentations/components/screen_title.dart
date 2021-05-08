@@ -11,7 +11,9 @@ class ScreenTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme.headline1;
     return Container(
-      child: Text(text, style: theme,),
+      child: Text(
+        text, style: theme,
+      ),
     );
   }
 }

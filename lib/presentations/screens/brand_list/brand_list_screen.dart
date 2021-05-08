@@ -5,7 +5,9 @@ import 'package:bike_store_admin_flutter/data/models/common/page_info.dart';
 import 'package:bike_store_admin_flutter/data/models/common/paged_data.dart';
 import 'package:bike_store_admin_flutter/data/models/production/brand.dart';
 import 'package:bike_store_admin_flutter/domain/service_intf/production/brand_service.dart';
+import 'package:bike_store_admin_flutter/presentations/components/pagination.dart';
 import 'package:bike_store_admin_flutter/presentations/components/screen_title.dart';
+import 'package:bike_store_admin_flutter/presentations/components/search_bar.dart';
 import 'package:bike_store_admin_flutter/presentations/components/vertical_spacer.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -17,10 +19,12 @@ class BrandListScreen extends StatefulWidget {
 
 class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState {
   var _brandService = GetIt.instance<BrandService>();
-  double iconSize = 40;
+
+  var _keywordController = TextEditingController();
 
   PageInfo _pageInfo = PageInfo.withInitialValue();
   List<Brand> _brands = [];
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -29,13 +33,27 @@ class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState 
   }
 
   Future<void> _init() async {
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    _isLoading = true;
+    safeSetState();
+
     try {
-      PagedData res = await _brandService.find();
+      PagedData res = await _brandService.find(
+        page: _pageInfo.page,
+        size: _pageInfo.size,
+        keyword: _keywordController.text,
+      );
       _pageInfo = res.pageInfo;
       _brands = res.data;
-      safeSetState();
+      await Future.delayed(const Duration(milliseconds: 200));
     } catch(e) {
       print(e);
+    } finally {
+      _isLoading = false;
+      safeSetState();
     }
   }
 
@@ -51,78 +69,95 @@ class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState 
             ScreenTitle(
               text: 'Brand',
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-
+            SearchBar(
+              onSearch: () {
+                _loadData();
+              },
+              keywordController: _keywordController,
+            ),
+            SizedBox(height: 32,),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: secondaryColor,
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Brands",
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {}, 
-                )
-              ],
+                  SizedBox(
+                    width: double.infinity,
+                    child: DataTable(
+                      horizontalMargin: 0,
+                      columnSpacing: 16.0,
+                      columns: [
+                        DataColumn(
+                          label: Text("ID"),
+                        ),
+                        DataColumn(
+                          label: Text("Name"),
+                        ),
+                        DataColumn(
+                          label: Text("Actions"),
+                        ),
+                      ],
+                      rows: List.generate(_pageInfo.size, (index) {
+                        if (index < _brands.length) {
+                          return _brands[index];
+                        } else {
+                          return null;
+                        }
+                      }).map(_brandDataRow).toList(),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 8,),
-            _buildRow(
-              children: [
-                Text('ID'),
-                Text('Name'),
-                Text(''),
-              ]
+            SizedBox(height: 32,),
+            Center(
+              child: Pagination(
+                pageInfo: _pageInfo,
+                onPageChanged: (page) {
+                  _pageInfo.page = page;
+                  _loadData();
+                },
+              ),
             ),
-            ..._buildBrandList(),
+            SizedBox(height: 64,),
           ],
         ),
       ),
     );
   }
 
-  List<Widget> _buildBrandList() {
-    if (_brands.length == 0) {
-      return [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+  DataRow _brandDataRow(Brand brand) {
+    var cells;
+    if (brand != null) {
+      cells = [
+        DataCell(Text(brand.id),),
+        DataCell(Text(brand.name)),
+        DataCell(Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Empty')
-          ],
-        ),
-      ];
-    } else {
-      return _brands.map((e) => Container(
-        child: _buildRow(
-          children: [
-            Text(e.id),
-            Text(e.name),
-            Row(
-              children: [
-                IconButton(icon: Icon(Icons.edit), onPressed: () {}),
-              ],
+            IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+
+              },
             ),
           ],
-        ),
-      )).toList();
+        )),
+      ];
+    } else {
+      cells = List.generate(3, (index) => DataCell(Text('')));
     }
-  }
 
-  Widget _buildRow({@required List<Widget> children}) {
-    final flexList = [1, 3, 1];
-    final _children = children.mapWithIndex((e, i) => Expanded(
-      flex: i <= flexList.length - 1 ? flexList[i] : 1,
-      child: e,
-    )).toList();
-
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(),
-        ),
-      ),
-      child: Row(
-        children: _children,
-      ),
+    return DataRow(
+      cells: cells,
     );
   }
 
