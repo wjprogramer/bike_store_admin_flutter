@@ -13,6 +13,12 @@ class MyRouteConfig extends Equatable {
   bool get isHome => RouteUtility.compareConfigsUris(this, MyRouteConfig.home());
   MyRouteConfig.home(): this._(Uri(path: '/'));
 
+  bool get isBrand => RouteUtility.compareConfigsUris(this, MyRouteConfig.brand(id));
+  MyRouteConfig.brand(String? brandId): this._(
+    Uri(path: '/brands/$brandId'),
+    id: brandId,
+  );
+
   bool get isBrandList => RouteUtility.compareConfigsUris(this, MyRouteConfig.brandList());
   MyRouteConfig.brandList(): this._(Uri(path: '/brands'));
 

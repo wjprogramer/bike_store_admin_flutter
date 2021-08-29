@@ -1,4 +1,5 @@
 import 'package:bike_store_admin_flutter/navigation/my_route_config.dart';
+import 'package:bike_store_admin_flutter/presentations/screens/brand/brand_screen.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/brand_list/brand_list_screen.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/category_list/category_list_screen.dart';
 import 'package:bike_store_admin_flutter/presentations/screens/customer_details/customer_details_screen.dart';
@@ -67,7 +68,9 @@ class RouteUtility {
 
     if (pathSegmentsCount == 2) {
       var id = pathSegments[1];
-      if (pathSegments.checkPathIs(MyRouteConfig.productDetails(id))) {
+      if (pathSegments.checkPathIs(MyRouteConfig.brand(id))) {
+        return MyRouteConfig.brand(pathSegments[1]);
+      } else if (pathSegments.checkPathIs(MyRouteConfig.productDetails(id))) {
         return MyRouteConfig.productDetails(pathSegments[1]);
       }
     }
@@ -88,56 +91,59 @@ class RouteUtility {
     String name = currentConfiguration.uri.path;
     Widget? screen;
 
-    if (currentConfiguration.isBrandList)
+    if (currentConfiguration.isBrand)
+      screen = BrandScreen();
+
+    else if (currentConfiguration.isBrandList)
       screen = BrandListScreen();
 
-    if (currentConfiguration.isCategoryList)
+    else if (currentConfiguration.isCategoryList)
       screen = CategoryListScreen();
 
-    if (currentConfiguration.isProductDetail)
+    else if (currentConfiguration.isProductDetail)
       screen = ProductDetailScreen();
 
-    if (currentConfiguration.isProductList)
+    else if (currentConfiguration.isProductList)
       screen = ProductListScreen();
 
-    if (currentConfiguration.isStockList)
+    else if (currentConfiguration.isStockList)
       screen = StockListScreen();
 
-    if (currentConfiguration.isStockDetailsOfProduct)
+    else if (currentConfiguration.isStockDetailsOfProduct)
       screen = StoreDetailsScreen();
 
-    if (currentConfiguration.isCustomerList)
+    else if (currentConfiguration.isCustomerList)
       screen = CustomerListScreen();
 
-    if (currentConfiguration.isCustomerDetails)
+    else if (currentConfiguration.isCustomerDetails)
       screen = CustomerDetailsScreen();
 
-    if (currentConfiguration.isOrderList)
+    else if (currentConfiguration.isOrderList)
       screen = OrderListScreen();
 
-    if (currentConfiguration.isOrderDetails)
+    else if (currentConfiguration.isOrderDetails)
       screen = OrderDetailsScreen();
 
-    if (currentConfiguration.isStaffList)
+    else if (currentConfiguration.isStaffList)
       screen = StaffListScreen();
 
-    if (currentConfiguration.isStaffDetails)
+    else if (currentConfiguration.isStaffDetails)
       screen = StaffDetailsScreen();
 
-    if (currentConfiguration.isStoreList)
+    else if (currentConfiguration.isStoreList)
       screen = StoreListScreen();
 
-    if (currentConfiguration.isStoreDetails)
+    else if (currentConfiguration.isStoreDetails)
       screen = StoreDetailsScreen();
 
-    if (currentConfiguration.isUnknown)
+    else if (currentConfiguration.isUnknown)
       screen = UnknownScreen();
 
     if (screen != null) {
       pages.add(MaterialPage(
-          key: key as LocalKey?,
-          name: name,
-          child: screen
+        key: key as LocalKey?,
+        name: name,
+        child: screen,
       ));
     }
 

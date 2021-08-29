@@ -12,6 +12,8 @@ import 'base_nav_bar.dart';
 import 'base_side_bar.dart';
 
 class BaseLayout extends StatefulWidget {
+  static MyRouterDelegate? routerDelegate;
+
   @override
   _BaseLayoutState createState() => _BaseLayoutState();
 }
@@ -20,7 +22,6 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
   late BaseLayoutViewModel _baseLayoutViewModel;
   PlatformRouteInformationProvider? _routeInformationProvider;
 
-  MyRouterDelegate? _routerDelegate;
   MyRouteInformationParser _routeInformationParser = MyRouteInformationParser();
 
   @override
@@ -35,7 +36,7 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
     );
 
     final routeConfig = RouteUtility.getRouteConfig(routeInformation);
-    _routerDelegate = MyRouterDelegate(currentState: routeConfig);
+    BaseLayout.routerDelegate = MyRouterDelegate(currentState: routeConfig);
   }
 
   @override
@@ -54,13 +55,13 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
       child: Scaffold(
         key: _baseLayoutViewModel.scaffoldKey,
         drawer: isMobile ? BaseSideBar(
-          myRouterDelegate: _routerDelegate,
+          myRouterDelegate: BaseLayout.routerDelegate,
         ) : null,
         body: Row(
           children: [
             if (!isMobile)
               BaseSideBar(
-                myRouterDelegate: _routerDelegate,
+                myRouterDelegate: BaseLayout.routerDelegate,
               ),
             Expanded(
               child: Column(
@@ -72,7 +73,7 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
                   ),
                   Expanded(
                     child: Router(
-                      routerDelegate: _routerDelegate!,
+                      routerDelegate: BaseLayout.routerDelegate!,
                       routeInformationParser: _routeInformationParser,
                       routeInformationProvider: _routeInformationProvider,
                     ),
