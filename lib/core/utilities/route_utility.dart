@@ -94,49 +94,49 @@ class RouteUtility {
     if (currentConfiguration.isBrand)
       screen = BrandScreen();
 
-    else if (currentConfiguration.isBrandList)
+    if (currentConfiguration.isBrandList)
       screen = BrandListScreen();
 
-    else if (currentConfiguration.isCategoryList)
+    if (currentConfiguration.isCategoryList)
       screen = CategoryListScreen();
 
-    else if (currentConfiguration.isProductDetail)
+    if (currentConfiguration.isProductDetail)
       screen = ProductDetailScreen();
 
-    else if (currentConfiguration.isProductList)
+    if (currentConfiguration.isProductList)
       screen = ProductListScreen();
 
-    else if (currentConfiguration.isStockList)
+    if (currentConfiguration.isStockList)
       screen = StockListScreen();
 
-    else if (currentConfiguration.isStockDetailsOfProduct)
+    if (currentConfiguration.isStockDetailsOfProduct)
       screen = StoreDetailsScreen();
 
-    else if (currentConfiguration.isCustomerList)
+    if (currentConfiguration.isCustomerList)
       screen = CustomerListScreen();
 
-    else if (currentConfiguration.isCustomerDetails)
+    if (currentConfiguration.isCustomerDetails)
       screen = CustomerDetailsScreen();
 
-    else if (currentConfiguration.isOrderList)
+    if (currentConfiguration.isOrderList)
       screen = OrderListScreen();
 
-    else if (currentConfiguration.isOrderDetails)
+    if (currentConfiguration.isOrderDetails)
       screen = OrderDetailsScreen();
 
-    else if (currentConfiguration.isStaffList)
+    if (currentConfiguration.isStaffList)
       screen = StaffListScreen();
 
-    else if (currentConfiguration.isStaffDetails)
+    if (currentConfiguration.isStaffDetails)
       screen = StaffDetailsScreen();
 
-    else if (currentConfiguration.isStoreList)
+    if (currentConfiguration.isStoreList)
       screen = StoreListScreen();
 
-    else if (currentConfiguration.isStoreDetails)
+    if (currentConfiguration.isStoreDetails)
       screen = StoreDetailsScreen();
 
-    else if (currentConfiguration.isUnknown)
+    if (currentConfiguration.isUnknown)
       screen = UnknownScreen();
 
     if (screen != null) {
