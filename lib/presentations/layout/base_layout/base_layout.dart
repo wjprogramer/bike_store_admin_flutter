@@ -2,7 +2,6 @@ import 'package:bike_store_admin_flutter/core/utilities/route_utility.dart';
 import 'package:bike_store_admin_flutter/core/utils/mixins/base_screen_state.dart';
 import 'package:bike_store_admin_flutter/navigation/my_route_information_parser.dart';
 import 'package:bike_store_admin_flutter/navigation/my_router_delegate.dart';
-import 'package:bike_store_admin_flutter/presentations/view_models/base_layout_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import "package:universal_html/html.dart" as html;
@@ -14,12 +13,29 @@ import 'base_side_bar.dart';
 class BaseLayout extends StatefulWidget {
   static MyRouterDelegate? routerDelegate;
 
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
-  _BaseLayoutState createState() => _BaseLayoutState();
+  BaseLayoutState createState() => BaseLayoutState();
+
+  static BaseLayoutState of(
+    BuildContext context, {
+    bool rootNavigator = false,
+  }) {
+    BaseLayoutState? state;
+    if (context is StatefulElement && context.state is BaseLayoutState) {
+      state = context.state as BaseLayoutState;
+    }
+    if (rootNavigator) {
+      state = context.findRootAncestorStateOfType<BaseLayoutState>() ?? state;
+    } else {
+      state = state ?? context.findAncestorStateOfType<BaseLayoutState>();
+    }
+    return state!;
+  }
 }
 
-class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
-  late BaseLayoutViewModel _baseLayoutViewModel;
+class BaseLayoutState extends State<BaseLayout> with BaseScreenState {
   PlatformRouteInformationProvider? _routeInformationProvider;
 
   MyRouteInformationParser _routeInformationParser = MyRouteInformationParser();
@@ -45,15 +61,19 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
     super.dispose();
   }
 
+  void toggleDrawer() {
+    if (!widget.scaffoldKey.currentState!.isDrawerOpen) {
+      widget.scaffoldKey.currentState!.openDrawer();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    _baseLayoutViewModel = context.watch<BaseLayoutViewModel>();
-
     size = MediaQuery.of(context).size;
 
     return SafeArea(
       child: Scaffold(
-        key: _baseLayoutViewModel.scaffoldKey,
+        key: widget.scaffoldKey,
         drawer: isMobile ? BaseSideBar(
           myRouterDelegate: BaseLayout.routerDelegate,
         ) : null,
