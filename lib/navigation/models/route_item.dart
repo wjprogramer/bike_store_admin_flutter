@@ -6,23 +6,23 @@ typedef OnRouteInformationParse = Future<MyRouteConfig> Function(RouteInformatio
 
 class RouteItem {
   // parse
-  OnRouteInformationParse onRouteInformationParse;
-  int pathSegmentsCount;
+  OnRouteInformationParse? onRouteInformationParse;
+  int? pathSegmentsCount;
 
   // delegate
   Widget child;
-  Page page;
-  PageBuilder pageBuilder;
-  Key key;
-  String keyValue;
-  String name;
+  Page? page;
+  PageBuilder? pageBuilder;
+  Key? key;
+  String? keyValue;
+  String? name;
 
   RouteItem({
     // parse
     this.onRouteInformationParse,
     this.pathSegmentsCount,
     // delegate
-    @required this.child,
+    required this.child,
     this.page,
     this.pageBuilder,
     this.key,
@@ -36,12 +36,12 @@ class RouteItem {
     }
 
     if (pageBuilder != null) {
-      page = pageBuilder(this);
+      page = pageBuilder!(this);
     } else if (pageBuilder == null && page == null) {
       page = MaterialPage(
         child: child,
         name: name,
-        key: key,
+        key: key as LocalKey?,
       );
     }
   }

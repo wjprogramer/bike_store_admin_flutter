@@ -17,10 +17,10 @@ class BaseLayout extends StatefulWidget {
 }
 
 class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
-  BaseLayoutViewModel _baseLayoutViewModel;
-  PlatformRouteInformationProvider _routeInformationProvider;
+  late BaseLayoutViewModel _baseLayoutViewModel;
+  PlatformRouteInformationProvider? _routeInformationProvider;
 
-  MyRouterDelegate _routerDelegate;
+  MyRouterDelegate? _routerDelegate;
   MyRouteInformationParser _routeInformationParser = MyRouteInformationParser();
 
   @override
@@ -40,7 +40,7 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
 
   @override
   void dispose() {
-    _routeInformationProvider.dispose();
+    _routeInformationProvider!.dispose();
     super.dispose();
   }
 
@@ -72,7 +72,7 @@ class _BaseLayoutState extends State<BaseLayout> with BaseScreenState {
                   ),
                   Expanded(
                     child: Router(
-                      routerDelegate: _routerDelegate,
+                      routerDelegate: _routerDelegate!,
                       routeInformationParser: _routeInformationParser,
                       routeInformationProvider: _routeInformationProvider,
                     ),

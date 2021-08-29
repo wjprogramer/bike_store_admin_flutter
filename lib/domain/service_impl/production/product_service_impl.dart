@@ -4,7 +4,7 @@ import 'package:bike_store_admin_flutter/domain/service_intf/production/product_
 
 class ProductServiceImpl implements ProductService {
   @override
-  Future<void> create({String name, String imageUrl}) async {
+  Future<void> create({String? name, String? imageUrl}) async {
   }
 
   @override
@@ -13,10 +13,12 @@ class ProductServiceImpl implements ProductService {
 
   @override
   Future<PagedData> find({int page = 0, int size = 10}) async {
+    throw Exception('TODO: Implement');
   }
 
   @override
   Future<Product> getById(String id) async {
+    throw Exception('TODO: Implement');
   }
 
   @override

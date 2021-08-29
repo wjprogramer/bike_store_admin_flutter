@@ -5,7 +5,7 @@ class MyCard extends StatelessWidget {
   final Widget child;
 
   MyCard({
-    @required this.child,
+    required this.child,
   });
 
   @override

@@ -6,9 +6,9 @@ import 'flavor_config.dart';
 class FlavorBanner extends StatelessWidget {
 
   final Widget child;
-  BannerConfig bannerConfig;
+  BannerConfig? bannerConfig;
 
-  FlavorBanner({@required this.child});
+  FlavorBanner({required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,8 @@ class FlavorBanner extends StatelessWidget {
 
   BannerConfig _getDefaultBanner() {
     return BannerConfig(
-        bannerName: FlavorConfig.instance.name,
-        bannerColor: FlavorConfig.instance.color
+        bannerName: FlavorConfig.instance!.name,
+        bannerColor: FlavorConfig.instance!.color
     );
   }
 
@@ -39,11 +39,11 @@ class FlavorBanner extends StatelessWidget {
         height: 50,
         child: CustomPaint(
           painter: BannerPainter(
-              message: bannerConfig.bannerName,
+              message: bannerConfig!.bannerName,
               textDirection: Directionality.of(context),
               layoutDirection: Directionality.of(context),
               location: BannerLocation.topStart,
-              color: bannerConfig.bannerColor
+              color: bannerConfig!.bannerColor
           ),
         ),
       ),
@@ -63,7 +63,7 @@ class BannerConfig {
   final Color bannerColor;
 
   BannerConfig({
-    @required this.bannerName,
-    @required this.bannerColor});
+    required this.bannerName,
+    required this.bannerColor});
 
 }

@@ -2,9 +2,9 @@ import 'package:bike_store_admin_flutter/data/models/base_model.dart';
 
 class Category implements BaseModel {
 
-  String id;
-  String name;
-  bool isDeleted;
+  String? id;
+  String? name;
+  bool? isDeleted;
 
   Category({
     this.id,

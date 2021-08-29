@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 class MyRouteConfig extends Equatable {
   final Uri uri;
 
-  final String id;
+  final String? id;
 
   MyRouteConfig._(this.uri, {
     this.id,
@@ -23,7 +23,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.productList(): this._(Uri(path: '/products'));
 
   bool get isProductDetail => RouteUtility.compareConfigsUris(this, MyRouteConfig.productDetails(id));
-  MyRouteConfig.productDetails(String productId) : this._(
+  MyRouteConfig.productDetails(String? productId) : this._(
     Uri(path: '/product/$productId'),
     id: productId,
   );
@@ -32,7 +32,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.stockList(): this._(Uri(path: '/stocks'));
 
   bool get isStockDetailsOfProduct => RouteUtility.compareConfigsUris(this, MyRouteConfig.stockDetailsOfProduct(id));
-  MyRouteConfig.stockDetailsOfProduct(String productId): this._(
+  MyRouteConfig.stockDetailsOfProduct(String? productId): this._(
     Uri(path: '/product/stock/$productId'),
     id: productId,
   );
@@ -41,7 +41,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.customerList(): this._(Uri(path: '/customers'));
 
   bool get isCustomerDetails => RouteUtility.compareConfigsUris(this, MyRouteConfig.customerDetails(id));
-  MyRouteConfig.customerDetails(String customerId): this._(
+  MyRouteConfig.customerDetails(String? customerId): this._(
     Uri(path: '/customer/$customerId'),
     id: customerId
   );
@@ -50,7 +50,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.orderList(): this._(Uri(path: '/orders'));
 
   bool get isOrderDetails => RouteUtility.compareConfigsUris(this, MyRouteConfig.orderDetails(id));
-  MyRouteConfig.orderDetails(String orderId): this._(
+  MyRouteConfig.orderDetails(String? orderId): this._(
     Uri(path: '/order/$orderId'),
     id: orderId,
   );
@@ -59,7 +59,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.staffList(): this._(Uri(path: '/staffs'));
 
   bool get isStaffDetails => RouteUtility.compareConfigsUris(this, MyRouteConfig.staffDetails(id));
-  MyRouteConfig.staffDetails(String staffId): this._(
+  MyRouteConfig.staffDetails(String? staffId): this._(
     Uri(path: '/staff/$staffId'),
     id: staffId
   );
@@ -68,7 +68,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.storeList(): this._(Uri(path: '/stores'));
 
   bool get isStoreDetails => RouteUtility.compareConfigsUris(this, MyRouteConfig.storeDetails(id));
-  MyRouteConfig.storeDetails(String storeId): this._(
+  MyRouteConfig.storeDetails(String? storeId): this._(
     Uri(path: '/store/$storeId'),
     id: storeId,
   );
@@ -77,7 +77,7 @@ class MyRouteConfig extends Equatable {
   MyRouteConfig.unknown(): this._(Uri(path: '/unknown'));
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
     uri.path,
     id,
   ];

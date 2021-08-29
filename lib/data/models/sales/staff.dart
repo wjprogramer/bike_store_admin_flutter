@@ -3,15 +3,15 @@ import 'package:bike_store_admin_flutter/data/models/sales/store.dart';
 
 class Staff implements BaseModel {
 
-  String id;
-  String firstName;
-  String lastName;
-  String email;
-  String phone;
-  int active;
-  int storeId;
-  int managerId;
-  Store store;
+  String? id;
+  String? firstName;
+  String? lastName;
+  String? email;
+  String? phone;
+  int? active;
+  int? storeId;
+  int? managerId;
+  Store? store;
 
   Staff({
     this.id,

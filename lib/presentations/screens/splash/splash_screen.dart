@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> with BaseScreenState {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
       // await Future.delayed(const Duration(milliseconds: 1000));
       // Navigator.of(context).push(MaterialPageRoute(
       //   builder: (_) => BaseLayout(),

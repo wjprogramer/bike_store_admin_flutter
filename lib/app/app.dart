@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    MaterialApp app;
+    late MaterialApp app;
 
     app = MaterialApp(
       title: 'Bike Store',
       debugShowCheckedModeBanner: false,
       theme: getDarkTheme(context),
-      onGenerateInitialRoutes: (initialRoute) => [
-        app.onGenerateRoute(RouteSettings(name: initialRoute))
-      ],
+      onGenerateInitialRoutes: ((initialRoute) => [
+        app.onGenerateRoute!(RouteSettings(name: initialRoute))!
+      ]) as List<Route<dynamic>> Function(String)?,
       onGenerateRoute: (_) {
         return PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 0),

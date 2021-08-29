@@ -4,8 +4,8 @@ import 'package:bike_store_admin_flutter/data/models/sales/store.dart';
 abstract class StoreRemoteRepository {
 
   Future<void> create({
-    String name,
-    String imageUrl,
+    String? name,
+    String? imageUrl,
   });
 
   Future<Store> getById(String id);

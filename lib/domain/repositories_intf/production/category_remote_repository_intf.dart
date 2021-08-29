@@ -4,8 +4,8 @@ import 'package:bike_store_admin_flutter/data/models/production/category.dart';
 abstract class CategoryRemoteRepository {
 
   Future<void> create({
-    String name,
-    String imageUrl,
+    String? name,
+    String? imageUrl,
   });
 
   Future<Category> getById(String id);

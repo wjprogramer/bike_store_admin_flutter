@@ -2,16 +2,16 @@ import 'package:bike_store_admin_flutter/core/utilities/route_utility.dart';
 import 'package:bike_store_admin_flutter/navigation/my_route_config.dart';
 import 'package:flutter/material.dart';
 
-class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
-    with ChangeNotifier, PopNavigatorRouterDelegateMixin<MyRouteConfig> {
+class MyRouterDelegate extends RouterDelegate<MyRouteConfig?>
+    with ChangeNotifier, PopNavigatorRouterDelegateMixin<MyRouteConfig?> {
 
   final GlobalKey<NavigatorState> _navigatorKey;
 
-  MyRouteConfig _currentConfiguration;
-  MyRouteConfig _previousConfiguration;
+  MyRouteConfig? _currentConfiguration;
+  MyRouteConfig? _previousConfiguration;
 
   MyRouterDelegate({
-    MyRouteConfig currentState,
+    MyRouteConfig? currentState,
   }): _currentConfiguration = currentState,
         _navigatorKey = GlobalKey<NavigatorState>()
   {
@@ -22,7 +22,7 @@ class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
   GlobalKey<NavigatorState> get navigatorKey => _navigatorKey;
 
   @override
-  MyRouteConfig get currentConfiguration => _currentConfiguration;
+  MyRouteConfig? get currentConfiguration => _currentConfiguration;
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +34,14 @@ class MyRouterDelegate extends RouterDelegate<MyRouteConfig>
 
     return Navigator(
       key: navigatorKey,
-      pages: RouteUtility.getPages(_currentConfiguration),
+      pages: RouteUtility.getPages(_currentConfiguration!),
       onPopPage: onPopPage,
       // transitionDelegate: transitionDelegate,
     );
   }
 
   @override
-  Future<void> setNewRoutePath(MyRouteConfig newState) async {
+  Future<void> setNewRoutePath(MyRouteConfig? newState) async {
     _currentConfiguration = newState;
     return;
   }

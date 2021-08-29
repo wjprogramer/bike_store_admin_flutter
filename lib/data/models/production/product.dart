@@ -2,16 +2,16 @@ import 'package:bike_store_admin_flutter/data/models/base_model.dart';
 
 class Product implements BaseModel {
 
-  String id;
-  String name;
-  int modelYear;
-  double listPrice;
-  int brandId;
-  int categoryId;
-  List<String> imagesUrls;
-  bool visible;
-  bool enable;
-  bool isDeleted;
+  String? id;
+  String? name;
+  int? modelYear;
+  double? listPrice;
+  int? brandId;
+  int? categoryId;
+  List<String>? imagesUrls;
+  bool? visible;
+  bool? enable;
+  bool? isDeleted;
 
   Product({
     this.id,

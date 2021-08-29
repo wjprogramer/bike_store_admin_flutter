@@ -38,7 +38,7 @@ class RouteUtility {
   }
 
   static MyRouteConfig getRouteConfig(RouteInformation routeInformation) {
-    final uri = Uri.parse(routeInformation.location);
+    final uri = Uri.parse(routeInformation.location!);
     final pathSegments = uri.pathSegments;
     final pathSegmentsCount = pathSegments.length;
 
@@ -86,7 +86,7 @@ class RouteUtility {
 
     Key key = ValueKey(currentConfiguration.uri.path);
     String name = currentConfiguration.uri.path;
-    Widget screen;
+    Widget? screen;
 
     if (currentConfiguration.isBrandList)
       screen = BrandListScreen();
@@ -135,7 +135,7 @@ class RouteUtility {
 
     if (screen != null) {
       pages.add(MaterialPage(
-          key: key,
+          key: key as LocalKey?,
           name: name,
           child: screen
       ));
@@ -145,7 +145,7 @@ class RouteUtility {
   }
 
   static bool compareConfigsUris(MyRouteConfig config, MyRouteConfig otherConfig, {
-    int maxIndex
+    int? maxIndex
   }) {
     final otherUri = otherConfig.uri;
     if (config.uri.pathSegments.length != otherUri.pathSegments.length) {

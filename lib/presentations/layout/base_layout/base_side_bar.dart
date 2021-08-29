@@ -3,10 +3,10 @@ import 'package:bike_store_admin_flutter/presentations/components/parent_nav_ite
 import 'package:flutter/material.dart';
 
 class BaseSideBar extends StatefulWidget {
-  final MyRouterDelegate myRouterDelegate;
+  final MyRouterDelegate? myRouterDelegate;
 
   BaseSideBar({
-    @required this.myRouterDelegate
+    required this.myRouterDelegate
   });
 
   @override
@@ -14,7 +14,7 @@ class BaseSideBar extends StatefulWidget {
 }
 
 class _BaseSideBarState extends State<BaseSideBar> {
-  MyRouterDelegate _myRouterDelegate;
+  MyRouterDelegate? _myRouterDelegate;
 
   @override
   void initState() {
@@ -48,28 +48,28 @@ class _BaseSideBarState extends State<BaseSideBar> {
                         text: 'Brands',
                         icon: Icons.local_offer_outlined,
                         onPressed: () {
-                          _myRouterDelegate.goBrandList();
+                          _myRouterDelegate!.goBrandList();
                         },
                       ),
                       _link(
                         text: 'Categories',
                         icon: Icons.reorder_rounded,
                         onPressed: () {
-                          _myRouterDelegate.goCategoryList();
+                          _myRouterDelegate!.goCategoryList();
                         },
                       ),
                       _link(
                         text: 'Products',
                         icon: Icons.shopping_cart_outlined,
                         onPressed: () {
-                          _myRouterDelegate.goProductList();
+                          _myRouterDelegate!.goProductList();
                         },
                       ),
                       _link(
                         text: 'Stocks',
                         icon: Icons.compare_arrows_outlined,
                         onPressed: () {
-                          _myRouterDelegate.goStockList();
+                          _myRouterDelegate!.goStockList();
                         },
                       ),
                       _separator(),
@@ -78,28 +78,28 @@ class _BaseSideBarState extends State<BaseSideBar> {
                         text: 'Customers',
                         icon: Icons.people_outline,
                         onPressed: () {
-                          _myRouterDelegate.goCustomerList();
+                          _myRouterDelegate!.goCustomerList();
                         },
                       ),
                       _link(
                         text: 'Orders',
                         icon: Icons.list_outlined,
                         onPressed: () {
-                          _myRouterDelegate.goOrderList();
+                          _myRouterDelegate!.goOrderList();
                         },
                       ),
                       _link(
                         text: 'Staffs',
                         icon: Icons.admin_panel_settings_outlined,
                         onPressed: () {
-                          _myRouterDelegate.goStaffList();
+                          _myRouterDelegate!.goStaffList();
                         },
                       ),
                       _link(
                         text: 'Stores',
                         icon: Icons.store_outlined,
                         onPressed: () {
-                          _myRouterDelegate.goStoreList();
+                          _myRouterDelegate!.goStoreList();
                         },
                       ),
                       _separator(),
@@ -111,13 +111,13 @@ class _BaseSideBarState extends State<BaseSideBar> {
                             _link(
                               text: 'Colors',
                               onPressed: () {
-                                _myRouterDelegate.goStoreList();
+                                _myRouterDelegate!.goStoreList();
                               },
                             ),
                             _link(
                               text: 'Font',
                               onPressed: () {
-                                _myRouterDelegate.goStoreList();
+                                _myRouterDelegate!.goStoreList();
                               },
                             ),
                           ]
@@ -127,7 +127,7 @@ class _BaseSideBarState extends State<BaseSideBar> {
                         text: 'About',
                         icon: Icons.mail_outline,
                         onPressed: () {
-                          _myRouterDelegate.goProductList();
+                          _myRouterDelegate!.goProductList();
                         },
                       ),
                     ],
@@ -171,8 +171,8 @@ class _BaseSideBarState extends State<BaseSideBar> {
 
   Widget _link({
     String text = '',
-    IconData icon,
-    Function onPressed,
+    IconData? icon,
+    Function? onPressed,
   }) {
     return ListTile(
       leading: icon != null ? Icon(
@@ -181,7 +181,7 @@ class _BaseSideBarState extends State<BaseSideBar> {
         size: 16,
       ) : null,
       horizontalTitleGap: 0.0,
-      onTap: onPressed ?? () {},
+      onTap: onPressed as void Function()? ?? () {},
       title: Text(text, style: TextStyle(fontSize: 20),),
     );
   }

@@ -4,7 +4,7 @@ class ScreenTitle extends StatelessWidget {
   final String text;
 
   ScreenTitle({
-    @required this.text,
+    required this.text,
   });
 
   @override

@@ -2,11 +2,11 @@ import 'package:bike_store_admin_flutter/data/models/base_model.dart';
 
 class PageInfo implements BaseModel {
 
-  int size;
-  int page;
-  int dataCount;
-  int totalPages;
-  int totalDataCount;
+  int? size;
+  int? page;
+  int? dataCount;
+  int? totalPages;
+  int? totalDataCount;
 
   PageInfo({
     this.size,
@@ -16,7 +16,7 @@ class PageInfo implements BaseModel {
     this.totalDataCount,
   });
 
-  bool get isLast => page == totalPages - 1;
+  bool get isLast => page == totalPages! - 1;
   bool get isFirst => page == 0;
 
   PageInfo.withInitialValue(): this(

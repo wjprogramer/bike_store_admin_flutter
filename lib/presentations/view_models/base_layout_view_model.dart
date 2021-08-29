@@ -7,8 +7,8 @@ class BaseLayoutViewModel extends ChangeNotifier {
   GlobalKey<ScaffoldState> get scaffoldKey => _scaffoldKey;
 
   void toggleDrawer() {
-    if (!_scaffoldKey.currentState.isDrawerOpen) {
-      _scaffoldKey.currentState.openDrawer();
+    if (!_scaffoldKey.currentState!.isDrawerOpen) {
+      _scaffoldKey.currentState!.openDrawer();
     }
   }
 

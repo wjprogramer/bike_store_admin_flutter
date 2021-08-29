@@ -5,13 +5,13 @@ import 'product.dart';
 
 class Stock implements BaseModel {
 
-  String id;
-  int quantity;
-  int storeId;
-  int productId;
-  bool isDeleted;
-  Product product;
-  Store store;
+  String? id;
+  int? quantity;
+  int? storeId;
+  int? productId;
+  bool? isDeleted;
+  Product? product;
+  Store? store;
 
   Stock({
     this.id,
@@ -49,8 +49,8 @@ class Stock implements BaseModel {
       'store_id': storeId,
       'product_id': productId,
       'is_deleted': isDeleted,
-      'product': product.toJson(),
-      'store': store.toJson(),
+      'product': product!.toJson(),
+      'store': store!.toJson(),
     };
   }
 

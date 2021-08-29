@@ -7,20 +7,20 @@ import 'store.dart';
 
 class Order implements BaseModel {
 
-  String id;
-  String orderStatus;
-  String orderDate;
-  String requiredDate;
-  String shippedDate;
-  String customerId;
-  String storeId;
-  String staffId;
-  bool isDeleted;
+  String? id;
+  String? orderStatus;
+  String? orderDate;
+  String? requiredDate;
+  String? shippedDate;
+  String? customerId;
+  String? storeId;
+  String? staffId;
+  bool? isDeleted;
 
-  Customer customer;
-  Store store;
-  Staff staff;
-  List<OrderItem> orderItems;
+  Customer? customer;
+  Store? store;
+  Staff? staff;
+  List<OrderItem>? orderItems;
 
   Order({
     this.id,

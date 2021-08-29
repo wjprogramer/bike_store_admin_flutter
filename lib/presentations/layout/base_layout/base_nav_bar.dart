@@ -7,7 +7,7 @@ class BaseNavBar extends StatefulWidget {
   final bool isMobile;
 
   BaseNavBar({
-    @required this.isMobile
+    required this.isMobile
   });
 
   @override
@@ -15,7 +15,7 @@ class BaseNavBar extends StatefulWidget {
 }
 
 class _BaseNavBarState extends State<BaseNavBar> {
-  BaseLayoutViewModel _baseLayoutViewModel;
+  late BaseLayoutViewModel _baseLayoutViewModel;
 
   @override
   Widget build(BuildContext context) {

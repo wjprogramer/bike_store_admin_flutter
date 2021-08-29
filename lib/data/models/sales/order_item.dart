@@ -2,13 +2,13 @@ import 'package:bike_store_admin_flutter/data/models/base_model.dart';
 
 class OrderItem implements BaseModel {
 
-  String id;
-  String orderId;
-  String quantity;
-  String listPrice;
-  String discount;
-  String productId;
-  bool isDeleted;
+  String? id;
+  String? orderId;
+  String? quantity;
+  String? listPrice;
+  String? discount;
+  String? productId;
+  bool? isDeleted;
 
   OrderItem({
     this.id,

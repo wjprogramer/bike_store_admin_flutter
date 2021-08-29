@@ -16,9 +16,9 @@ class ApiRequestHelper {
   ApiRequestHelper._();
 
   static Future<ApiResponse> get(String path, {
-    Map<String, String> headers,
-    Map<String, dynamic> queryParameters,
-    ParseJsonData parseJsonData,
+    Map<String, String>? headers,
+    Map<String, dynamic>? queryParameters,
+    ParseJsonData? parseJsonData,
   }) async {
     return _request(path,
       method: HttpMethod.Get,
@@ -29,9 +29,9 @@ class ApiRequestHelper {
   }
 
   static Future<ApiResponse> post(String path, {
-    Map<String, String> headers,
-    Map<String, dynamic> queryParameters,
-    ParseJsonData parseJsonData,
+    Map<String, String>? headers,
+    Map<String, dynamic>? queryParameters,
+    ParseJsonData? parseJsonData,
   }) async {
     return _request(path,
       method: HttpMethod.Post,
@@ -42,10 +42,10 @@ class ApiRequestHelper {
   }
 
   static Future<ApiResponse> _request(String path, {
-    HttpMethod method,
-    Map<String, String> headers,
-    Map<String, dynamic> queryParameters,
-    ParseJsonData parseJsonData,
+    HttpMethod? method,
+    Map<String, String>? headers,
+    Map<String, dynamic>? queryParameters,
+    ParseJsonData? parseJsonData,
   }) async {
     try {
       var body;
@@ -71,7 +71,7 @@ class ApiRequestHelper {
     }
   }
 
-  static Future<http.Response> _sendRequest(HttpMethod method, Uri uri) async {
+  static Future<http.Response> _sendRequest(HttpMethod? method, Uri uri) async {
     switch (method) {
       case HttpMethod.Get:
         return http.get(uri);
@@ -84,7 +84,7 @@ class ApiRequestHelper {
     }
   }
 
-  static String _getQueryString(Map<String, dynamic> queryParameters) {
+  static String _getQueryString(Map<String, dynamic>? queryParameters) {
     if (queryParameters == null || queryParameters.isEmpty) {
       return '';
     } else {
@@ -92,7 +92,7 @@ class ApiRequestHelper {
     }
   }
 
-  static Map<String, dynamic> _parseResBody(String body) {
+  static Map<String, dynamic>? _parseResBody(String body) {
     try {
       var json = jsonDecode(body);
       if (json is! Map<String, dynamic>) {

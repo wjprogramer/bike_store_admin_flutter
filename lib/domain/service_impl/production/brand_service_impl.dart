@@ -5,14 +5,14 @@ import 'package:bike_store_admin_flutter/domain/service_intf/production/brand_se
 import 'package:flutter/foundation.dart';
 
 class BrandServiceImpl implements BrandService {
-  final BrandRemoteRepository _brandRemoteRepository;
+  final BrandRemoteRepository? _brandRemoteRepository;
 
   BrandServiceImpl({
-    @required BrandRemoteRepository repository,
+    required BrandRemoteRepository? repository,
   }): _brandRemoteRepository = repository;
 
   @override
-  Future<void> create({String name, String imageUrl}) async {
+  Future<void> create({String? name, String? imageUrl}) async {
   }
 
   @override
@@ -20,19 +20,19 @@ class BrandServiceImpl implements BrandService {
   }
 
   @override
-  Future<PagedData> find({
-    int page = 0,
-    int size = 10,
-    String keyword,
+  Future<PagedData?> find({
+    int? page = 0,
+    int? size = 10,
+    String? keyword,
   }) async {
-    return _brandRemoteRepository.find(
+    return _brandRemoteRepository!.find(
       page: page, size: size, keyword: keyword,
     );
   }
 
   @override
   Future<Brand> getById(String id) async {
-    return _brandRemoteRepository.getById(id);
+    return _brandRemoteRepository!.getById(id);
   }
 
   @override

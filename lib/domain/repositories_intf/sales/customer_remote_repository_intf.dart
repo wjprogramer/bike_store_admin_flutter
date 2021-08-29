@@ -4,8 +4,8 @@ import 'package:bike_store_admin_flutter/data/models/sales/customer.dart';
 abstract class CustomerRemoteRepository {
 
   Future<void> create({
-    String name,
-    String imageUrl,
+    String? name,
+    String? imageUrl,
   });
 
   Future<Customer> getById(String id);

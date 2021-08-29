@@ -11,8 +11,8 @@ class ParentNavItem extends StatefulWidget {
 
   ParentNavItem({
     this.text = '',
-    @required this.icon,
-    @required this.children,
+    required this.icon,
+    required this.children,
   });
 
   @override

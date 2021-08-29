@@ -1,7 +1,7 @@
 class ApiResponse<T> {
-  int code;
-  String message;
-  T result;
+  int? code;
+  String? message;
+  T? result;
 
   ApiResponse({
     this.code,

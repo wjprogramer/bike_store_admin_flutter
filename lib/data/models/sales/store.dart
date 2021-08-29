@@ -2,15 +2,15 @@ import 'package:bike_store_admin_flutter/data/models/base_model.dart';
 
 class Store implements BaseModel {
 
-  String id;
-  String storeName;
-  String phone;
-  String email;
-  String street;
-  String city;
-  String state;
-  String zipCode;
-  bool isDeleted;
+  String? id;
+  String? storeName;
+  String? phone;
+  String? email;
+  String? street;
+  String? city;
+  String? state;
+  String? zipCode;
+  bool? isDeleted;
 
   Store({
     this.id,

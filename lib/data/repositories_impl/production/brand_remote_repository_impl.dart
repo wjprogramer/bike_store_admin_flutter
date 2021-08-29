@@ -8,7 +8,7 @@ import 'package:bike_store_admin_flutter/domain/repositories_intf/production/bra
 
 class BrandRemoteRepositoryImpl extends BrandRemoteRepository {
   @override
-  Future<void> create({String name, String imageUrl}) async {
+  Future<void> create({String? name, String? imageUrl}) async {
   }
 
   @override
@@ -16,10 +16,10 @@ class BrandRemoteRepositoryImpl extends BrandRemoteRepository {
   }
 
   @override
-  Future<PagedData> find({
-    int page = 0,
-    int size = 10,
-    String keyword,
+  Future<PagedData?> find({
+    int? page = 0,
+    int? size = 10,
+    String? keyword,
   }) async {
     final path = ApiUrlConfig.brands;
     final queryParameters = {
@@ -39,6 +39,7 @@ class BrandRemoteRepositoryImpl extends BrandRemoteRepository {
 
   @override
   Future<Brand> getById(String id) async {
+    throw Exception('TODO: Implement');
   }
 
   @override

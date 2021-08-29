@@ -4,7 +4,7 @@ import 'package:bike_store_admin_flutter/domain/repositories_intf/production/pro
 
 class ProductRemoteRepositoryImpl implements ProductRemoteRepository {
   @override
-  Future<void> create({String name, String imageUrl}) async {
+  Future<void> create({String? name, String? imageUrl}) async {
   }
 
   @override
@@ -13,10 +13,12 @@ class ProductRemoteRepositoryImpl implements ProductRemoteRepository {
 
   @override
   Future<PagedData> find({int page = 0, int size = 10}) async {
+    throw Exception('TODO: Implement');
   }
 
   @override
   Future<Product> getById(String id) async {
+    throw Exception('TODO: Implement');
   }
 
   @override

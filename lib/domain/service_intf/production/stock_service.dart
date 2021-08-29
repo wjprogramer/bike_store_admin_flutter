@@ -4,8 +4,8 @@ import 'package:bike_store_admin_flutter/data/models/production/stock.dart';
 abstract class StockService {
 
   Future<void> create({
-    String name,
-    String imageUrl,
+    String? name,
+    String? imageUrl,
   });
 
   Future<Stock> getById(String id);

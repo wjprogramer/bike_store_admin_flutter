@@ -18,12 +18,12 @@ class BrandListScreen extends StatefulWidget {
 }
 
 class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState {
-  var _brandService = GetIt.instance<BrandService>();
+  BrandService _brandService = GetIt.instance<BrandService>();
 
   var _keywordController = TextEditingController();
 
-  PageInfo _pageInfo = PageInfo.withInitialValue();
-  List<Brand> _brands = [];
+  PageInfo? _pageInfo = PageInfo.withInitialValue();
+  List<Brand>? _brands = [];
   bool _isLoading = false;
 
   @override
@@ -41,13 +41,16 @@ class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState 
     safeSetState();
 
     try {
-      PagedData res = await _brandService.find(
-        page: _pageInfo.page,
-        size: _pageInfo.size,
+      PagedData? res = await _brandService.find(
+        page: _pageInfo!.page,
+        size: _pageInfo!.size,
         keyword: _keywordController.text,
       );
+      if (res == null) {
+        return;
+      }
       _pageInfo = res.pageInfo;
-      _brands = res.data;
+      _brands = res.data as List<Brand>?;
       await Future.delayed(const Duration(milliseconds: 200));
     } catch(e) {
       print(e);
@@ -105,9 +108,9 @@ class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState 
                           label: Text("Actions"),
                         ),
                       ],
-                      rows: List.generate(_pageInfo.size, (index) {
-                        if (index < _brands.length) {
-                          return _brands[index];
+                      rows: List.generate(_pageInfo!.size!, (index) {
+                        if (index < _brands!.length) {
+                          return _brands![index];
                         } else {
                           return null;
                         }
@@ -122,7 +125,7 @@ class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState 
               child: Pagination(
                 pageInfo: _pageInfo,
                 onPageChanged: (page) {
-                  _pageInfo.page = page;
+                  _pageInfo!.page = page;
                   _loadData();
                 },
               ),
@@ -134,12 +137,12 @@ class _BrandListScreenState extends State<BrandListScreen> with BaseScreenState 
     );
   }
 
-  DataRow _brandDataRow(Brand brand) {
+  DataRow _brandDataRow(Brand? brand) {
     var cells;
     if (brand != null) {
       cells = [
-        DataCell(Text(brand.id),),
-        DataCell(Text(brand.name)),
+        DataCell(Text(brand.id!),),
+        DataCell(Text(brand.name!)),
         DataCell(Row(
           mainAxisSize: MainAxisSize.min,
           children: [

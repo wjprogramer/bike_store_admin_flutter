@@ -4,8 +4,8 @@ import 'package:bike_store_admin_flutter/data/models/sales/order.dart';
 abstract class OrderService {
 
   Future<void> create({
-    String name,
-    String imageUrl,
+    String? name,
+    String? imageUrl,
   });
 
   Future<Order> getById(String id);
